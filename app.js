@@ -1,18 +1,14 @@
-const http = require('http');
+const express = require("express");
+const app = express();
 
-const server = http.createServer((req, res) =>{
-    if(req.url === '/'){
-     console.log("root url");
-     res.write("hello world!");
-     res.end();
-    }
-    else if(req.url === '/api/notes'){
-        console.log("inside api url");
-        res.write(JSON.stringify({"title":"secret", "body":"hello world!"}))
-        res.end();
-    }
-    
-
+app.get("/", (req, res)=>{
+    res.send("hello world!");
 })
-console.log("server started");
-server.listen(3001);
+
+app.get("/api/notes", (req,res)=>{
+    res.send({"title":"Secret Book", "bookContent":"Secret for success"});
+})
+
+app.listen(3001,()=>{
+    console.log("Server listening on port 3001");
+})
