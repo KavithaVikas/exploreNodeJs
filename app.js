@@ -26,7 +26,13 @@ switch (noteAction) {
         notes.readNote(parameters.title);
         break;
     case "REMOVE":
-        notes.removeNote(parameters.title);
+        let noteRemoval = notes.removeNote(parameters.title);
+        if(noteRemoval){
+            console.log(`Note ${noteRemoval} remove was success`);
+        }
+        else{
+            console.log("note remove is success");
+        }
         console.log("REMOVE NOTES");
         break;
     default:

@@ -50,6 +50,10 @@ readNote = (noteName) => {
 removeNote = (noteName) => {
 
     console.log(`note removed is ${noteName}`);
+    let allNotes = fetchNotes();
+    let removableNote = allNotes.filter(note => note.title !== noteName);
+    saveNotes(removableNote);
+    return noteName;    
 
 }
 
