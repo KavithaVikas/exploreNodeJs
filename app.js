@@ -23,7 +23,10 @@ switch (noteAction) {
         break;
     case "READ":
         console.log("READ NOTES");
-        notes.readNote(parameters.title);
+        let noteRead = notes.readNote(parameters.title);
+        if(noteRead.length > 0){
+            console.log(`the data to read is ${noteRead[0].body}`);
+        }
         break;
     case "REMOVE":
         let noteRemoval = notes.removeNote(parameters.title);

@@ -44,6 +44,9 @@ getAllNotes = () => {
 }
 
 readNote = (noteName) => {
+    let allNotes = fetchNotes();
+    let filteredNode = allNotes.filter(note => note.title === noteName);
+    return filteredNode;
     console.log(` name of note  ${noteName} requested for read`);
 }
 
@@ -53,7 +56,7 @@ removeNote = (noteName) => {
     let allNotes = fetchNotes();
     let removableNote = allNotes.filter(note => note.title !== noteName);
     saveNotes(removableNote);
-    return noteName;    
+    return allNotes.length === removableNote.length;    
 
 }
 
