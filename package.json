@@ -17,9 +17,14 @@
   },
   "homepage": "https://github.com/KavithaVikas/exploreNodeJs#readme",
   "dependencies": {
+    "child_process": "^1.0.2",
     "express": "^4.16.3",
+    "ffmpeg": "0.0.4",
+    "jimp": "^0.3.5",
     "lodash": "^4.17.10",
     "mediaserver": "^0.1.1",
+    "split-file": "^2.1.0",
+    "when": "^3.7.8",
     "yargs": "^4.7.1"
   }
 }
